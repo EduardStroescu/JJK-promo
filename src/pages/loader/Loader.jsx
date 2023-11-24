@@ -1,0 +1,94 @@
+import { useEffect, useRef } from "react";
+import {
+  introAnimation,
+  collapseWords,
+  progressAnimation,
+  animateTitle,
+} from "./animations";
+import styles from "./loader.module.scss";
+
+export function Loader({ timeline }) {
+  const loaderRef = useRef(null);
+  const wordGroupsRef = useRef(null);
+  const progressRef = useRef(null);
+  const progressNumberRef = useRef(null);
+
+  useEffect(() => {
+    timeline &&
+      timeline
+        .add(animateTitle)
+        .add(introAnimation(wordGroupsRef))
+        .add(progressAnimation(progressRef, progressNumberRef), 0)
+        .add(collapseWords(loaderRef), "-=2");
+  }, [timeline]);
+
+  return (
+    <div className={styles.loader__wrapper}>
+      <div className={styles.loader__progressWrapper}>
+        <div className={styles.loader__progress} ref={progressRef}></div>
+        <span className={styles.loader__progressNumber} ref={progressNumberRef}>
+          0
+        </span>
+      </div>
+      <div className={styles.loader} ref={loaderRef}>
+        <div className={styles.loader__wheel}>
+          <div className={styles.loader__wheel__middleFlame}>
+            <img src="/blueFireball.gif" alt="" />
+          </div>
+          <div data-flames className={styles.loader__wheel__flames}>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute" />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className=" absolute" />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute" />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute" />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute" />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute " />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute " />
+            </div>
+            <div>
+              <img src="/blueFireball.gif" alt="" className="absolute " />
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="flex flex-col items-center justify-center"
+          ref={wordGroupsRef}
+        >
+          <h1 className={styles.loader__title}>
+            <div className={styles.loader__titleEnglish}>
+              <span data-hidden data-title-first>
+                Jujutsu
+              </span>
+              <span data-hidden data-title-second>
+                Kaisen
+              </span>
+            </div>
+            <span className={styles.loader__titleJapanese} data-title-last>
+              呪術廻戦
+            </span>
+          </h1>
+          <h1 className={styles.loader__titleSecond}>
+            <div className={styles.loader__titleEnglishSecond}>
+              <span>Jujutsu</span>
+              <span>Kaisen</span>
+            </div>
+            <span className={styles.loader__titleJapaneseSecond}>呪術廻戦</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+}

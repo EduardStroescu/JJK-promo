@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Jujutsu Kaisen';
+  src: url('./styles/JujutsuKaisen.ttf') format('truetype'); 
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html body {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/blue_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* font-family: "Jujutsu Kaisen"; */
+  overflow: hidden;
+}
+
+.sticky-element {
+  position: relative;
+  /* Your other styles... */
+  pointer-events: auto;
+}
+
+.sticky-element::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust as needed */
+  right: -10px; /* Adjust as needed */
+  bottom: -10px; /* Adjust as needed */
+  left: -10px; /* Adjust as needed */
+  z-index: 1; /* Ensure it's behind the actual element */
+  /* pointer-events: none; */
+  cursor: default;
+}
+
+
+#v0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+
+}
+
+.eye {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  right: 4%;
+  background-color: #ffefe2;
+  box-shadow: inset 0 0 60px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+  border: 2px solid black;
+  position: absolute;
+  perspective: 500px;
+  overflow: hidden;
+}
+
+.eye .iris {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  position: absolute;
+  transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
+  background-image: url("/eye.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 100%;
+  z-index: 999999;
+}
+
+.eye .iris.anim {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: iris;
+}
+
+@keyframes iris {
+  0%, 100% {
+    transform: rotateX(-10deg) rotateY(15deg) translateZ(68px) scale(0.8);
+  }
+  10% {
+    transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
+  }
+  30% {
+    transform: rotateX(-30deg) rotateY(-5deg) translateZ(68px) scale(0.8);
+  }
+  45% {
+    transform: rotateX(-20deg) rotateY(-15deg) translateZ(68px) scale(0.8);
+  }
+  55%, 60% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(68px) scale(0.8);
+  }
+  90% {
+    transform: rotateX(30deg) rotateY(5deg) translateZ(68px) scale(0.8);
+  }
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+

@@ -1,0 +1,231 @@
+.characters {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10rem 10rem 20rem 10rem;
+  background-image: url("/bg_sub.jpg");
+  background-size: cover;
+
+  &__wrapper {
+    padding: 0 10rem 0 10rem;
+    border: double;
+    border-radius: 0.25rem;
+    border-width: 4px;
+    border-color: rgb(59 130 246);
+
+    &__title {
+      text-align: center;
+      font-size: 3.75rem;
+      line-height: 1;
+      padding: 2.5rem 0;
+    }
+
+    &__categories {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem 0;
+
+      &__single {
+        padding: 0.25rem 0.5rem;
+        border: 4px solid rgb(59 130 246);
+        border-style: double;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding-bottom: 10rem;
+
+    &__individualCharacter {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      &__background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url("/character_bg.jpg");
+        mask: url("/transition_sprite.webp");
+        background-size: cover;
+
+        &:hover {
+          animation: ani 0.7s steps(22) 0.3s forwards;
+        }
+
+        &:not(:hover) {
+          animation: reverseAni 0.7s steps(22) forwards;
+        }
+      }
+
+      &__title {
+        position: absolute;
+        width: 100%;
+        top: 1rem;
+        right: 3.5rem;
+        transform-origin: top right;
+        transform: rotate(-90deg);
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        text-align: end;
+      }
+
+      &__img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 8rem 2rem 12rem 2rem;
+
+    &__wrapper {
+      padding: 0 2rem;
+
+      &__title {
+        font-size: 3rem;
+      }
+
+      &__categories {
+        padding: 1rem 0;
+
+        &__single {
+          /* Adjust styles for smaller screens */
+        }
+      }
+    }
+
+    &__container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 6rem 1rem 10rem 1rem;
+
+    &__wrapper {
+      padding: 0 1rem;
+
+      &__title {
+        font-size: 2.5rem;
+      }
+
+      &__categories {
+        padding: 0.5rem 0;
+
+        &__single {
+          /* Adjust styles for even smaller screens */
+        }
+      }
+    }
+
+    &__container {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
+
+.selectedCharacter {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("/blue_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0 10rem;
+
+  &__closeButton {
+    position: absolute;
+    right: 17rem;
+    top: 5rem;
+    width: 7rem;
+
+    &__img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 6rem;
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding: 7rem 7rem 0 0;
+
+      &__title {
+        font-size: 3rem;
+        line-height: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 2rem;
+
+    &__closeButton {
+      right: 5rem;
+    }
+
+    &__content {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+
+      &__description {
+        padding: 3rem 3rem 0 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 1rem;
+
+    &__closeButton {
+      right: 2rem;
+    }
+
+    &__content {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+
+      &__description {
+        padding: 2rem 2rem 0 0;
+      }
+    }
+  }
+}
+
+@keyframes ani {
+  0% {
+    mask-position: 0 0;
+  }
+  100% {
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes reverseAni {
+  0% {
+    mask-position: 100% 0;
+  }
+  100% {
+    mask-position: 0 0;
+  }
+}

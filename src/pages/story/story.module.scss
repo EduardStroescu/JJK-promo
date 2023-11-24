@@ -1,0 +1,87 @@
+.storyWrapper {
+  padding: 10rem 10rem 20rem 10rem;
+  width: 100%;
+  background-image: url("/bg_sub.jpg");
+  background-size: cover;
+
+  @media screen and (max-width: 768px) {
+    padding: 8rem 2rem 12rem 2rem;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 6rem 1rem 10rem 1rem;
+    /* Adjust other styles as needed for even smaller screens */
+  }
+}
+
+.storyContainer {
+  padding: 0 10rem;
+  border: 4px solid rgb(59 130 246);
+  border-style: double;
+  border-radius: 0.25rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 2rem;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 1rem;
+    /* Adjust other styles as needed for even smaller screens */
+  }
+}
+
+.storyTitle {
+  text-align: center;
+  font-size: 3.75rem;
+  padding-top: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 2.5rem;
+    /* Adjust other styles as needed for even smaller screens */
+  }
+}
+
+.textContainerFirst {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 0;
+  border-bottom: 4px solid rgb(59 130 246);
+  border-style: double;
+  font-size: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.5rem 0;
+    /* Adjust other styles as needed for even smaller screens */
+  }
+}
+
+.textContainerSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 1.25rem;
+  padding: 5rem 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 3rem 0;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 2rem 0;
+    /* Adjust other styles as needed for even smaller screens */
+  }
+}
