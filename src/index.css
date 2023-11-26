@@ -19,27 +19,42 @@ html body {
   background-image: url("/blue_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-
-  /* font-family: "Jujutsu Kaisen"; */
   overflow: hidden;
 }
 
-.sticky-element {
-  position: relative;
-  /* Your other styles... */
-  pointer-events: auto;
+.navbar__wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 0;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: white;
+  z-index: 99999999;
 }
-
-.sticky-element::before {
-  content: "";
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0.25rem 2.5rem;
+  backdrop-filter: blur(16px);
+  border-radius: 9999px;
+}
+.navbar__pseudoElement{
   position: absolute;
-  top: -10px; /* Adjust as needed */
-  right: -10px; /* Adjust as needed */
-  bottom: -10px; /* Adjust as needed */
-  left: -10px; /* Adjust as needed */
-  z-index: 1; /* Ensure it's behind the actual element */
-  /* pointer-events: none; */
-  cursor: default;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.navbar__pseudoElement:hover {
+  transform: scaleY(4);
 }
 
 
@@ -89,27 +104,6 @@ html body {
   animation-name: iris;
 }
 
-@keyframes iris {
-  0%, 100% {
-    transform: rotateX(-10deg) rotateY(15deg) translateZ(68px) scale(0.8);
-  }
-  10% {
-    transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
-  }
-  30% {
-    transform: rotateX(-30deg) rotateY(-5deg) translateZ(68px) scale(0.8);
-  }
-  45% {
-    transform: rotateX(-20deg) rotateY(-15deg) translateZ(68px) scale(0.8);
-  }
-  55%, 60% {
-    transform: rotateX(0deg) rotateY(0deg) translateZ(68px) scale(0.8);
-  }
-  90% {
-    transform: rotateX(30deg) rotateY(5deg) translateZ(68px) scale(0.8);
-  }
-}
-
 *::-webkit-scrollbar {
   display: none;
 }
@@ -136,5 +130,58 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+@keyframes iris {
+  0%, 100% {
+    transform: rotateX(-10deg) rotateY(15deg) translateZ(68px) scale(0.8);
+  }
+  10% {
+    transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
+  }
+  30% {
+    transform: rotateX(-30deg) rotateY(-5deg) translateZ(68px) scale(0.8);
+  }
+  45% {
+    transform: rotateX(-20deg) rotateY(-15deg) translateZ(68px) scale(0.8);
+  }
+  55%, 60% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(68px) scale(0.8);
+  }
+  90% {
+    transform: rotateX(30deg) rotateY(5deg) translateZ(68px) scale(0.8);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .eye {
+    width: 90px;
+    height: 90px;
+  }
+  .navbar__pseudoElement{
+    display: none;
+  }
+
+  @keyframes iris {
+    0%, 100% {
+      transform: rotateX(-10deg) rotateY(15deg) translateZ(45px) scale(0.8);
+    }
+    10% {
+      transform: rotateX(-50deg) rotateY(15deg) translateZ(45px) scale(0.8);
+    }
+    30% {
+      transform: rotateX(-30deg) rotateY(-5deg) translateZ(45px) scale(0.8);
+    }
+    45% {
+      transform: rotateX(-20deg) rotateY(-15deg) translateZ(45px) scale(0.8);
+    }
+    55%, 60% {
+      transform: rotateX(0deg) rotateY(0deg) translateZ(45px) scale(0.8);
+    }
+    90% {
+      transform: rotateX(30deg) rotateY(5deg) translateZ(45px) scale(0.8);
+    }
+  }
 }
 

@@ -7,7 +7,7 @@ import { useStickyContext } from "./StickyContext";
 export function StickyCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const cursor = useRef(null);
-  const cursorSize = isHovered ? 70 : 70;
+  const cursorSize = isHovered ? 70 : 60;
   const { stickyElementsRef } = useStickyContext();
 
   const mouse = {
@@ -200,28 +200,26 @@ export function StickyCursor() {
   };
 
   return (
-    <div className={styles.cursorContainer}>
-      <motion.div
-        transformTemplate={template}
-        style={{
-          left: smoothMouse.x,
-          top: smoothMouse.y,
-          scaleX: scale.x,
-          scaleY: scale.y,
-        }}
-        animate={{
-          width: cursorSize,
-          height: cursorSize,
-        }}
-        className={styles.cursor}
-        ref={cursor}
-      >
-        <motion.img
-          className={styles.cursor__cursorFire}
-          src="/blueFireball.gif"
-          alt=""
-        />
-      </motion.div>
-    </div>
+    <motion.div
+      transformTemplate={template}
+      style={{
+        left: smoothMouse.x,
+        top: smoothMouse.y,
+        scaleX: scale.x,
+        scaleY: scale.y,
+      }}
+      animate={{
+        width: cursorSize,
+        height: cursorSize,
+      }}
+      className={styles.cursor}
+      ref={cursor}
+    >
+      <motion.img
+        className={styles.cursor__cursorFire}
+        src="/blueFireball.gif"
+        alt=""
+      />
+    </motion.div>
   );
 }

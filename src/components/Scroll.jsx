@@ -84,6 +84,8 @@ export function Scroll({ children }) {
         ref={content}
         style={{
           position: "relative",
+          top: 0,
+          left: 0,
           width: "100%",
         }}
       >

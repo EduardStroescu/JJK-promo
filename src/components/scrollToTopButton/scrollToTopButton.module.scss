@@ -13,4 +13,12 @@
     right: -0.5rem;
     scale: 1.5;
   }
+  @media (max-width: 900px) {
+    &__image {
+      position: absolute;
+      bottom: -2rem;
+      right: -4.5rem;
+      scale: 0.7;
+    }
+  }
 }

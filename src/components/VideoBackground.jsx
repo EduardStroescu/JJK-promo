@@ -39,10 +39,8 @@ export function VideoBackground({ videoRef }) {
   }, []);
 
   return (
-    <div>
-      <video ref={videoRef} id="v0" preload="auto" muted>
-        <source type="video/mp4" src="/trailer.mp4" />
-      </video>
-    </div>
+    <video ref={videoRef} id="v0" preload="auto" muted>
+      <source type="video/mp4" src="/trailer.mp4" />
+    </video>
   );
 }

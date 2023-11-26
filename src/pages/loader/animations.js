@@ -5,7 +5,7 @@ export const introAnimation = (wordGroupsRef) => {
   tl.to(
     wordGroupsRef.current,
     {
-      yPercent: -100,
+      transform: "translateY(-120vh)",
       duration: 3,
       ease: "power3.inOut",
     },

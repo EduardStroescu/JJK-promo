@@ -8,7 +8,7 @@ import { animateCharacterHover } from "./animations";
 
 export function Characters() {
   const timeline = useRef(gsap.timeline());
-  const [selectedCathegory, setSelectedCathegory] = useState(
+  const [selectedCategory, setSelectedCategory] = useState(
     charactersData[0].content
   );
   const [selectedCharacter, setSelectedCharacter] = useState(null);
@@ -19,7 +19,7 @@ export function Characters() {
 
   return (
     <>
-      <SecondaryLoader key={selectedCathegory} />
+      <SecondaryLoader key={selectedCategory} />
       <div className={styles.characters}>
         <div className={styles.characters__wrapper}>
           <h1
@@ -28,22 +28,22 @@ export function Characters() {
           >
             Characters
           </h1>
-          <div className={styles.characters__wrapper__cathegories}>
+          <div className={styles.characters__wrapper__categories}>
             {charactersData.map((data, index) => {
               return (
                 <button
                   key={index}
                   ref={createStickyElementRef}
-                  className={styles.characters__wrapper__cathegories__single}
-                  onClick={() => setSelectedCathegory(data.content)}
+                  className={styles.characters__wrapper__categories__single}
+                  onClick={() => setSelectedCategory(data.content)}
                 >
-                  {data.cathegory}
+                  {data.category}
                 </button>
               );
             })}
           </div>
           <div className={styles.characters__container}>
-            {selectedCathegory?.map((character, index) => {
+            {selectedCategory?.map((character, index) => {
               return (
                 <button
                   onClick={() => setSelectedCharacter(character)}
@@ -88,9 +88,7 @@ export function Characters() {
               />
             </button>
             <div className={styles.selectedCharacter__content}>
-              <div className="w-full pointer-events-none">
-                <img src={selectedCharacter.thumbnail} alt="" />
-              </div>
+              <img src={selectedCharacter.thumbnail} alt="" />
               <div className={styles.selectedCharacter__content__description}>
                 <h2
                   className={

@@ -32,41 +32,35 @@ export function Loader({ timeline }) {
       </div>
       <div className={styles.loader} ref={loaderRef}>
         <div className={styles.loader__wheel}>
-          <div className={styles.loader__wheel__middleFlame}>
-            <img src="/blueFireball.gif" alt="" />
-          </div>
           <div data-flames className={styles.loader__wheel__flames}>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute" />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className=" absolute" />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute" />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute" />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute" />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute " />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute " />
+              <img src="/blueFireball.gif" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" className="absolute " />
+              <img src="/blueFireball.gif" alt="" />
             </div>
           </div>
         </div>
 
-        <div
-          className="flex flex-col items-center justify-center"
-          ref={wordGroupsRef}
-        >
+        <div className={styles.loader__titleWrapper} ref={wordGroupsRef}>
           <h1 className={styles.loader__title}>
             <div className={styles.loader__titleEnglish}>
               <span data-hidden data-title-first>
@@ -76,16 +70,14 @@ export function Loader({ timeline }) {
                 Kaisen
               </span>
             </div>
-            <span className={styles.loader__titleJapanese} data-title-last>
-              呪術廻戦
-            </span>
+            <span data-title-last>呪術廻戦</span>
           </h1>
           <h1 className={styles.loader__titleSecond}>
             <div className={styles.loader__titleEnglishSecond}>
               <span>Jujutsu</span>
               <span>Kaisen</span>
             </div>
-            <span className={styles.loader__titleJapaneseSecond}>呪術廻戦</span>
+            <span>呪術廻戦</span>
           </h1>
         </div>
       </div>

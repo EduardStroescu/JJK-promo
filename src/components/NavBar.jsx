@@ -55,17 +55,16 @@ export function NavBar() {
 
   const routes = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
     { name: "Story", path: "/story" },
     { name: "Characters", path: "/characters" },
   ];
 
   return (
-    <header className="w-full flex flex-row items-center justify-center fixed top-0 left-0 py-6 text-3xl text-white  z-[99999999]">
+    <header className="navbar__wrapper">
       <nav
+        className="navbar"
         ref={navRef}
         style={{ fontFamily: "Jujutsu Kaisen" }}
-        className="flex flex-row gap-16 bg-black/20 px-10 rounded-full py-1 backdrop-blur-lg"
       >
         {routes.map((route, index) => {
           return (
@@ -73,12 +72,12 @@ export function NavBar() {
               onClick={() => lenis.scrollTo("top", { duration: 0 })}
               to={route.path}
               key={route.name}
-              className="relative"
+              style={{ position: "relative" }}
             >
               {route.name}
               <div
+                className="navbar__pseudoElement"
                 ref={createStickyElementRef}
-                className="absolute left-0 -top-0 w-full h-full hover:scale-y-[4]"
               ></div>
             </Link>
           );

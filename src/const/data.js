@@ -1,6 +1,6 @@
 export const charactersData = [
   {
-    cathegory: "Tokyo Jujutsu High Sorcerers",
+    category: "Tokyo Jujutsu High Sorcerers",
     content: [
       {
         name: "Satoru Gojo",
@@ -47,7 +47,7 @@ export const charactersData = [
     ],
   },
   {
-    cathegory: "Kyoto Jujutsu High Sorcerers",
+    category: "Kyoto Jujutsu High Sorcerers",
     content: [
       { name: "Kokichi Muta", description: "", thumbnail: "/muta_large.png" },
       { name: "Mai Zenin", description: "", thumbnail: "/mai_large.png" },
@@ -66,7 +66,7 @@ export const charactersData = [
     ],
   },
   {
-    cathegory: "Cursed Spirits",
+    category: "Cursed Spirits",
     content: [
       {
         name: "Ryomen Sukuna",
@@ -80,7 +80,7 @@ export const charactersData = [
     ],
   },
   {
-    cathegory: "Non-Curse Users",
+    category: "Non-Curse Users",
     content: [
       {
         name: "Toji Fushiguro",

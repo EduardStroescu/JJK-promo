@@ -6,3 +6,4 @@ export { VideoBackground } from "./VideoBackground";
 export { NavBar } from "./NavBar";
 export { ScrollToTopButton } from "./scrollToTopButton/ScrollToTopButton";
 export { SecondaryLoader } from "./secondaryLoader/SecondaryLoader";
+export { LandscapePrompt } from "./LandscapePrompt";
