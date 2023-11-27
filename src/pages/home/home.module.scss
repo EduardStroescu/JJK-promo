@@ -41,3 +41,116 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
+
+.shibuyaSubtitle {
+  font-size: 7rem;
+  z-index: 100;
+
+  &__container {
+    position: fixed;
+    width: 100%;
+    bottom: 5%;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 4rem;
+  }
+}
+
+.outNowSubtitle {
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  opacity: 0;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+
+  &__decoration {
+    position: absolute;
+    scale: 1.5;
+    bottom: 15%;
+    right: 15%;
+    z-index: 100;
+  }
+  &__text {
+    position: relative;
+    font-size: 15rem;
+    font-weight: bold;
+    z-index: 110;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 15rem;
+  }
+}
+
+.watchOnSubtitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  font-size: 15rem;
+  z-index: 100;
+  font-weight: bold;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    inset: 0;
+    // pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.crunchyrollButton {
+  height: 10rem;
+
+  position: relative;
+  // font-size: 4rem;
+  border: 10px solid rgba(249, 115, 22);
+  border-style: double;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  z-index: 100;
+  background-image: url("/crunchyroll.webp");
+  background-size: cover;
+  background-position: center;
+
+  &__img {
+    position: absolute;
+    // scale: 1.4;
+    z-index: 100;
+    // transform: translate(-10%, -40%);
+  }
+}
+
+.funimationButton {
+  height: 10rem;
+  position: relative;
+  // font-size: 4rem;
+  border: 10px solid rgba(168, 85, 247);
+  border-style: double;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  z-index: 100;
+  background-image: url("/funimation.webp");
+  background-size: cover;
+  background-position: center;
+
+  &__img {
+    position: absolute;
+    // scale: 1.1;
+    z-index: 100;
+    // transform: translate(-10%, -43%);
+  }
+}

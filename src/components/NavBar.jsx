@@ -32,7 +32,7 @@ export function NavBar() {
             });
           } else {
             gsap.to(navRef.current, {
-              y: 10,
+              y: 0,
               autoAlpha: 1,
               duration: 3,
               ease: "expo.out",
@@ -60,7 +60,7 @@ export function NavBar() {
   ];
 
   return (
-    <header className="navbar__wrapper">
+    <header ref={navRef} className="navbar__wrapper">
       <nav
         className="navbar"
         ref={navRef}

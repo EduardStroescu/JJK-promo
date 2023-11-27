@@ -7,7 +7,6 @@ import gsap, { SteppedEase } from "gsap";
 import { animateCharacterHover } from "./animations";
 
 export function Characters() {
-  const timeline = useRef(gsap.timeline());
   const [selectedCategory, setSelectedCategory] = useState(
     charactersData[0].content
   );

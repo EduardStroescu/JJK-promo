@@ -19,9 +19,12 @@ export function Story() {
               serialized in Shueisha`&apos;s Weekly Shonen Jump. The series
               began serialization in March 2018, and depicts the battle between
               a curse born from negative human emotions and a sorcerer who uses
-              magic to exorcise it.To date, 24 volumes have been published, and
-              the cumulative circulation of the series has exceeded an
-              astonishing 80 million copies . .
+              magic to exorcise it.
+            </p>
+            <p>
+              To date, 24 volumes have been published, and the cumulative
+              circulation of the series has exceeded an astonishing 80 million
+              copies . .
             </p>
             <p>
               The first season of the TV anime was broadcast on Mainichi

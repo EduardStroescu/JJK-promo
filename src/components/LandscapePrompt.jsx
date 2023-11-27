@@ -1,6 +1,6 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export function LandscapePrompt({ setMatchesOptimalWidth }) {
+export function LandscapePrompt() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export function LandscapePrompt({ setMatchesOptimalWidth }) {
 
   if (windowWidth <= 600)
     return (
-      <div className="fixed top-0 left-0 z-[999999999] bg-black w-full h-[100vh] flex flex-col items-center justify-center">
-        <p className="text-6xl text-white text-center">
+      <div className="landscapePrompt">
+        <p>
           For an optimal experience please use your device in landscape mode.
         </p>
       </div>
