@@ -34,28 +34,28 @@ export function Loader({ timeline }) {
         <div className={styles.loader__wheel}>
           <div data-flames className={styles.loader__wheel__flames}>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
             <div>
-              <img src="/blueFireball.gif" alt="" />
+              <img src="/blueFireball.gif" width="343" height="488" alt="" />
             </div>
           </div>
         </div>

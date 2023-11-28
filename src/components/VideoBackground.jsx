@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useScrollContext } from "./Scroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function VideoBackground({ videoRef }) {
   const scroll = useScrollContext();
@@ -24,6 +25,7 @@ export function VideoBackground({ videoRef }) {
       if (video) {
         scrollSection.style.height =
           Math.floor(duration) * playbackConst + "px";
+        ScrollTrigger.refresh();
       }
     }
 

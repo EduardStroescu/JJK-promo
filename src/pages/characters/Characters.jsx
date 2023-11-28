@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useStickyContext } from "../../components/StickyCursor/StickyContext";
 import { charactersData } from "../../const/data";
 import { SecondaryLoader } from "../../components";
 import styles from "./characters.module.scss";
-import gsap, { SteppedEase } from "gsap";
-import { animateCharacterHover } from "./animations";
 
 export function Characters() {
   const [selectedCategory, setSelectedCategory] = useState(
@@ -65,6 +63,8 @@ export function Characters() {
                     loading="lazy"
                     src={character.thumbnail}
                     alt={character.name}
+                    width="750"
+                    height="1094"
                     className={
                       styles.characters__container__individualCharacter__img
                     }
@@ -84,10 +84,18 @@ export function Characters() {
                 className={styles.selectedCharacter__closeButton__img}
                 src="/closeIcon.png"
                 alt="Close"
+                width="450"
+                height="450"
               />
             </button>
             <div className={styles.selectedCharacter__content}>
-              <img src={selectedCharacter.thumbnail} alt="" />
+              <img
+                src={selectedCharacter.thumbnail}
+                alt=""
+                width="750"
+                height="1094"
+                className={styles.selectedCharacter__content__thumbnail}
+              />
               <div className={styles.selectedCharacter__content__description}>
                 <h2
                   className={

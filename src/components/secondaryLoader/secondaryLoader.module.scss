@@ -12,6 +12,7 @@
   mask-size: 2300% 100%;
   animation: ani 0.7s steps(22) 0.3s both;
   z-index: 9999999999;
+  pointer-events: none;
 }
 @keyframes ani {
   0% {

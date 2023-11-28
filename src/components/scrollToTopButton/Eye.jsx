@@ -12,7 +12,7 @@ export function Eye() {
     y: useMotionValue(0),
   };
 
-  const size = window.innerWidth >= 900 ? 68 : 40; // Adjust as needed
+  const size = window.innerWidth >= 1100 ? 68 : 40; // Adjust as needed
 
   useEffect(() => {
     const updateEyePosition = () => {

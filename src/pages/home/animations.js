@@ -44,12 +44,57 @@ export const animateShibuyaSubtitle = (shibuyaRef, scrollRef) => {
   return tl;
 };
 
-export const animateWatchOn = (watchOnRef, scrollRef) => {
+export const animateOutNow = (outNowRef, scrollRef) => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: scrollRef,
-      start: "8350px",
-      end: "+=500px",
+      trigger: ["data-footer"],
+      start: "+=8000px",
+      end: "+=400px",
+      scrub: 1,
+      onEnter: () => {
+        // Play the timeline forward when entering the trigger
+        tl.play();
+      },
+      onLeave: () => {
+        // Reverse the timeline when leaving the trigger
+        tl.reverse();
+      },
+      onEnterBack: () => {
+        // Play the timeline forward when scrolling back up
+        tl.play();
+      },
+      onLeaveBack: () => {
+        // Reverse the timeline when scrolling back up past the end
+        tl.reverse();
+      },
+    },
+  });
+  tl.addLabel("start")
+    .to(outNowRef.current, {
+      display: "block",
+      autoAlpha: 1,
+      duration: 1,
+      ease: "expo.inOut",
+    })
+    .addLabel("end")
+    .to(outNowRef.current, {
+      autoAlpha: 0,
+      duration: 1,
+      ease: "expo.inOut",
+    });
+
+  // Initially, set the opacity to 0 and pause the timeline
+  tl.set(outNowRef.current, { autoAlpha: 0 }).pause();
+
+  return tl;
+};
+
+export const animateWatchOn = (watchOnRef, videoRef, scrollRef) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ["data-footer"],
+      start: "+=8400px",
+      end: "+=300px",
       scrub: true,
       onEnter: () => {
         // Play the timeline forward when entering the trigger
@@ -89,59 +134,14 @@ export const animateWatchOn = (watchOnRef, scrollRef) => {
   return tl;
 };
 
-export const animateWatchNow = (watchNowRef, scrollRef) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: scrollRef,
-      start: "8100px",
-      end: "+=400px",
-      scrub: 1,
-      onEnter: () => {
-        // Play the timeline forward when entering the trigger
-        tl.play();
-      },
-      onLeave: () => {
-        // Reverse the timeline when leaving the trigger
-        tl.reverse();
-      },
-      onEnterBack: () => {
-        // Play the timeline forward when scrolling back up
-        tl.play();
-      },
-      onLeaveBack: () => {
-        // Reverse the timeline when scrolling back up past the end
-        tl.reverse();
-      },
-    },
-  });
-  tl.addLabel("start")
-    .to(watchNowRef.current, {
-      display: "block",
-      autoAlpha: 1,
-      duration: 1,
-      ease: "expo.inOut",
-    })
-    .addLabel("end")
-    .to(watchNowRef.current, {
-      autoAlpha: 0,
-      duration: 1,
-      ease: "expo.inOut",
-    });
-
-  // Initially, set the opacity to 0 and pause the timeline
-  tl.set(watchNowRef.current, { autoAlpha: 0 }).pause();
-
-  return tl;
-};
-
 export const animateScrollToTop = (scrollToTopRef, scrollRef) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: scrollRef,
       start: "0px",
-      end: "8600px",
+      end: "10080px",
       onUpdate: (self) => {
-        // Calculate scroll progress manually
+        // Check if scrolling forwards/backwards
         const scrollDirection = self.direction;
 
         if (scrollDirection === 1) {
@@ -163,7 +163,7 @@ export const animateScrollToTop = (scrollToTopRef, scrollRef) => {
     },
   });
   tl.to(scrollToTopRef.current, {
-    autoAlpha: 0, // Set initial opacity to 0
+    autoAlpha: 0,
   });
 };
 
@@ -201,27 +201,6 @@ export const animateImage = () => {
       },
       "<"
     );
-
-  return tl;
-};
-
-export const revealMenu = () => {
-  const tl = gsap.timeline();
-
-  tl.fromTo(
-    "[data-menu-item]",
-    {
-      autoAlpha: 0,
-      y: 32,
-    },
-    {
-      autoAlpha: 1,
-      y: 0,
-      stagger: 0.2,
-      ease: "expo.out",
-      duration: 2,
-    }
-  );
 
   return tl;
 };

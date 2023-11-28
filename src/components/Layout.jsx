@@ -25,7 +25,7 @@ export function Layout({ children }) {
     <>
       {loaderFinished ? (
         <>
-          {window.innerWidth >= 900 && <StickyCursor />}
+          {window.innerWidth >= 1280 && <StickyCursor />}
           <ScrollToTopButton />
           <NavBar />
           {children}
@@ -41,7 +41,7 @@ export function Layout({ children }) {
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer data-footer className="footer">
       <p className="footer__title">Disclaimer:</p>
       <p className="footer__paragraph">
         This website is fan-made and dedicated to celebrating the anime and

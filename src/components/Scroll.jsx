@@ -2,18 +2,11 @@ import { createContext, useRef, useContext, useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRouter } from "@tanstack/react-router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const scrollContext = createContext();
 export const useScrollContext = () => useContext(scrollContext);
-
-// const scroll = {
-//   progress: 0,
-//   ref: null,
-//   lenis: null,
-// };
 
 export function Scroll({ children }) {
   const [scroll, setScroll] = useState({
@@ -37,6 +30,10 @@ export function Scroll({ children }) {
     setScroll((prevScroll) => ({ ...prevScroll, lenis: newLenis }));
   };
 
+  const resize = () => {
+    ScrollTrigger.refresh();
+  };
+
   useEffect(() => {
     const lenis = new Lenis({
       wrapper: wrapper.current,
@@ -44,7 +41,6 @@ export function Scroll({ children }) {
       direction: "vertical", // vertical, horizontal
       gestureDirection: "vertical", // vertical, horizontal, both
       duration: 5,
-      normalizeWheel: true,
       smoothWheel: true,
       smoothTouch: true,
       touchMultiplier: 1,
@@ -62,7 +58,9 @@ export function Scroll({ children }) {
     gsap.ticker.add((time) => lenis.raf(time * 4000));
     gsap.ticker.lagSmoothing(0);
     ScrollTrigger.defaults({ scroller: wrapper.current });
+    window.addEventListener("resize", resize);
     return () => {
+      window.removeEventListener("resize", resize);
       lenis.destroy();
     };
   }, []);

@@ -22,6 +22,8 @@ export function ScrollToTopButton() {
       <img
         src="/hand.png"
         alt=""
+        width="246"
+        height="200"
         className={styles.button__image}
         loading="lazy"
       />

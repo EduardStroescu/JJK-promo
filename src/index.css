@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-html body {
+body {
   width: 100%;
   height: 100vh;
   background-image: url("/blue_bg.jpg");
@@ -23,7 +23,7 @@ html body {
   color: white;
 }
 
-.navbar__wrapper{
+.navbar__wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,9 @@ html body {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 4rem 0;
+  padding: 2.5rem 0;
+  animation: fadeIn 3s linear forwards;
+
   font-size: 1.875rem;
   line-height: 2.25rem;
   z-index: 99999999;
@@ -49,14 +51,16 @@ html body {
   backdrop-filter: blur(16px);
   border-radius: 9999px;
   pointer-events: auto;
-  transform: translateY(-90%);
+  transform: translateY(-60%);
 }
+
 .navbar__pseudoElement{
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  display: none;
 }
 .navbar__pseudoElement:hover {
   transform: scaleY(4);
@@ -70,7 +74,7 @@ html body {
   background-image: url('/footer_bg.webp');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 5rem 19rem;
+  padding: 0 0 4rem 0;
   text-align: center;
   animation: fadeIn 5s linear forwards;
 }
@@ -95,8 +99,9 @@ html body {
 }
 
 .eye {
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
+  
   bottom: 10%;
   right: 4%;
   background-color: #ffefe2;
@@ -142,6 +147,7 @@ html body {
   align-items: center;
   font-size: 3rem;
   text-align: center;
+  pointer-events: none;
 }
 
 *::-webkit-scrollbar {
@@ -174,22 +180,22 @@ html.lenis {
 
 @keyframes iris {
   0%, 100% {
-    transform: rotateX(-10deg) rotateY(15deg) translateZ(68px) scale(0.8);
+    transform: rotateX(-10deg) rotateY(15deg) translateZ(45px) scale(0.8);
   }
   10% {
-    transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
+    transform: rotateX(-50deg) rotateY(15deg) translateZ(45px) scale(0.8);
   }
   30% {
-    transform: rotateX(-30deg) rotateY(-5deg) translateZ(68px) scale(0.8);
+    transform: rotateX(-30deg) rotateY(-5deg) translateZ(45px) scale(0.8);
   }
   45% {
-    transform: rotateX(-20deg) rotateY(-15deg) translateZ(68px) scale(0.8);
+    transform: rotateX(-20deg) rotateY(-15deg) translateZ(45px) scale(0.8);
   }
   55%, 60% {
-    transform: rotateX(0deg) rotateY(0deg) translateZ(68px) scale(0.8);
+    transform: rotateX(0deg) rotateY(0deg) translateZ(45px) scale(0.8);
   }
   90% {
-    transform: rotateX(30deg) rotateY(5deg) translateZ(68px) scale(0.8);
+    transform: rotateX(30deg) rotateY(5deg) translateZ(45px) scale(0.8);
   }
 }
 
@@ -202,40 +208,56 @@ html.lenis {
   }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
+  .footer {
+    padding: 5rem 8rem 5rem 8rem;
+  }
+}
+
+@media (min-width: 1100px) {
   .eye {
-    width: 90px;
-    height: 90px;
+  width: 150px;
+  height: 150px;
+  }
+  .navbar__wrapper {
+  padding: 4rem 0;
+
+  }
+  .navbar {
+    transform: translateY(-90%);
   }
   .navbar__pseudoElement{
-    display: none;
-  }
-  .header {
-    
+    display: block;
   }
   .footer {
-    padding: 4rem 0;
+    padding: 5rem 15rem 5rem 15rem;
   }
 
   @keyframes iris {
     0%, 100% {
-      transform: rotateX(-10deg) rotateY(15deg) translateZ(45px) scale(0.8);
+      transform: rotateX(-10deg) rotateY(15deg) translateZ(68px) scale(0.8);
     }
     10% {
-      transform: rotateX(-50deg) rotateY(15deg) translateZ(45px) scale(0.8);
+      transform: rotateX(-50deg) rotateY(15deg) translateZ(68px) scale(0.8);
     }
     30% {
-      transform: rotateX(-30deg) rotateY(-5deg) translateZ(45px) scale(0.8);
+      transform: rotateX(-30deg) rotateY(-5deg) translateZ(68px) scale(0.8);
     }
     45% {
-      transform: rotateX(-20deg) rotateY(-15deg) translateZ(45px) scale(0.8);
+      transform: rotateX(-20deg) rotateY(-15deg) translateZ(68px) scale(0.8);
     }
     55%, 60% {
-      transform: rotateX(0deg) rotateY(0deg) translateZ(45px) scale(0.8);
+      transform: rotateX(0deg) rotateY(0deg) translateZ(68px) scale(0.8);
     }
     90% {
-      transform: rotateX(30deg) rotateY(5deg) translateZ(45px) scale(0.8);
+      transform: rotateX(30deg) rotateY(5deg) translateZ(68px) scale(0.8);
     }
   }
 }
+
+@media (min-width: 1500px) {
+  .footer {
+    padding: 5rem 19rem 5rem 10rem;
+  }
+} 
 

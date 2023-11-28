@@ -219,6 +219,8 @@ export function StickyCursor() {
         className={styles.cursor__cursorFire}
         src="/blueFireball.gif"
         alt=""
+        width="343"
+        height="488"
       />
     </motion.div>
   );

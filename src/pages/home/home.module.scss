@@ -43,7 +43,7 @@
 }
 
 .shibuyaSubtitle {
-  font-size: 7rem;
+  font-size: 4rem;
   z-index: 100;
 
   &__container {
@@ -55,8 +55,8 @@
     text-align: center;
   }
 
-  @media (max-width: 900px) {
-    font-size: 4rem;
+  @media (min-width: 900px) {
+    font-size: 7rem;
   }
 }
 
@@ -64,29 +64,47 @@
   width: 100%;
   display: none;
   position: fixed;
-  top: 5%;
+  top: 10%;
   left: 0;
   opacity: 0;
-  color: white;
   text-align: center;
   pointer-events: none;
 
   &__decoration {
     position: absolute;
-    scale: 1.5;
-    bottom: 15%;
-    right: 15%;
+    scale: 0.7;
+    bottom: -25%;
+    right: 0;
     z-index: 100;
   }
   &__text {
     position: relative;
-    font-size: 15rem;
+    font-size: 7rem;
     font-weight: bold;
     z-index: 110;
   }
+  @media (min-width: 900px) and (max-width: 1100px) {
+    top: 5%;
+    &__decoration {
+      scale: 1;
+      bottom: 0%;
+      right: 0%;
+    }
+    &__text {
+      font-size: 10rem;
+    }
+  }
 
-  @media (max-width: 900px) {
-    font-size: 15rem;
+  @media (min-width: 1100px) {
+    top: 5%;
+    &__decoration {
+      scale: 1.5;
+      bottom: 15%;
+      right: 15%;
+    }
+    &__text {
+      font-size: 15rem;
+    }
   }
 }
 
@@ -96,10 +114,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0rem;
-  font-size: 15rem;
   z-index: 100;
   font-weight: bold;
+  overflow: hidden;
 
   &__container {
     width: 100%;
@@ -110,47 +127,89 @@
     // pointer-events: none;
     opacity: 0;
   }
-}
 
-.crunchyrollButton {
-  height: 10rem;
+  &__primaryText {
+    font-size: 8rem;
+  }
 
-  position: relative;
-  // font-size: 4rem;
-  border: 10px solid rgba(249, 115, 22);
-  border-style: double;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  z-index: 100;
-  background-image: url("/crunchyroll.webp");
-  background-size: cover;
-  background-position: center;
+  &__secondaryText {
+    font-size: 6rem;
+    transform: translateY(-30%);
+  }
 
-  &__img {
-    position: absolute;
-    // scale: 1.4;
-    z-index: 100;
-    // transform: translate(-10%, -40%);
+  @media (min-width: 1100px) and (max-width: 1500px) {
+    gap: 1rem;
+    &__primaryText {
+      font-size: 13rem;
+    }
+    &__secondaryText {
+      font-size: 11rem;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    gap: 1rem;
+    &__primaryText {
+      font-size: 15rem;
+    }
+    &__secondaryText {
+      font-size: 13rem;
+    }
   }
 }
 
-.funimationButton {
-  height: 10rem;
-  position: relative;
-  // font-size: 4rem;
-  border: 10px solid rgba(168, 85, 247);
-  border-style: double;
-  border-radius: 0.25rem;
+.promoButtonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: center;
+  align-content: center;
+  padding: 0 4rem;
+  transform: translateY(-60%);
   overflow: hidden;
-  z-index: 100;
-  background-image: url("/funimation.webp");
-  background-size: cover;
-  background-position: center;
 
-  &__img {
-    position: absolute;
-    // scale: 1.1;
+  &__crunchyrollButton {
+    height: 5rem;
+    position: relative;
+    border: 10px solid rgba(249, 115, 22);
+    border-style: double;
+    border-radius: 0.25rem;
+    overflow: hidden;
     z-index: 100;
-    // transform: translate(-10%, -43%);
+    background-image: url("/crunchyroll.webp");
+    background-size: cover;
+    background-position: center;
+    font-size: 8rem;
   }
+
+  &__funimationButton {
+    height: 5rem;
+    position: relative;
+    border: 10px solid rgba(168, 85, 247);
+    border-style: double;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    z-index: 100;
+    background-image: url("/funimation.webp");
+    background-size: cover;
+    background-position: center;
+    font-size: 8rem;
+  }
+  @media (min-width: 1100px) {
+    padding: 0 15rem;
+
+    &__crunchyrollButton {
+      height: 8rem;
+      font-size: 15rem;
+    }
+    &__funimationButton {
+      height: 8rem;
+      font-size: 15rem;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
 }
