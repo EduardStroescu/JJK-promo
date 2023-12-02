@@ -25,9 +25,9 @@ export function NavBar() {
 
           if (scrollDirection === 1) {
             gsap.to(navRef.current, {
-              y: -100,
+              y: -200,
               autoAlpha: 0,
-              duration: 3,
+              duration: 5,
               ease: "expo.out",
             });
           } else {
@@ -66,7 +66,7 @@ export function NavBar() {
         ref={navRef}
         style={{ fontFamily: "Jujutsu Kaisen" }}
       >
-        {routes.map((route, index) => {
+        {routes.map((route) => {
           return (
             <Link
               onClick={() => lenis.scrollTo("top", { duration: 0 })}

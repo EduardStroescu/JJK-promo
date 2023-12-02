@@ -1,7 +1,6 @@
 .loader {
   font-family: "Jujutsu Kaisen";
   color: white;
-
   height: 100%;
   width: 100%;
   position: relative;
@@ -27,7 +26,7 @@
     overflow: hidden;
     inset: 0;
     z-index: 10;
-    // pointer-events: none;
+    pointer-events: none;
   }
 
   &__titleWrapper {
@@ -219,7 +218,7 @@
       gap: 2rem;
     }
     &__progressNumber {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
     &__wheel {
       &__flames {
@@ -280,10 +279,10 @@
 @media (min-width: 900px) and (max-width: 1500px) {
   @keyframes flameWheel_rotate {
     0% {
-      transform: rotate(0) translateX(200px) rotate(0); /* Adjust the translateX value as needed */
+      transform: rotate(0) translateX(200px) rotate(0);
     }
     100% {
-      transform: rotate(360deg) translateX(200px) rotate(-360deg); /* Adjust the translateX value as needed */
+      transform: rotate(360deg) translateX(200px) rotate(-360deg);
     }
   }
 }
@@ -291,10 +290,10 @@
 @media (min-width: 1500px) {
   @keyframes flameWheel_rotate {
     0% {
-      transform: rotate(0) translateX(300px) rotate(0); /* Adjust the translateX value as needed */
+      transform: rotate(0) translateX(300px) rotate(0);
     }
     100% {
-      transform: rotate(360deg) translateX(300px) rotate(-360deg); /* Adjust the translateX value as needed */
+      transform: rotate(360deg) translateX(300px) rotate(-360deg);
     }
   }
 }

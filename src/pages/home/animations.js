@@ -44,7 +44,7 @@ export const animateShibuyaSubtitle = (shibuyaRef, scrollRef) => {
   return tl;
 };
 
-export const animateOutNow = (outNowRef, scrollRef) => {
+export const animateOutNow = (outNowRef) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ["data-footer"],
@@ -89,7 +89,7 @@ export const animateOutNow = (outNowRef, scrollRef) => {
   return tl;
 };
 
-export const animateWatchOn = (watchOnRef, videoRef, scrollRef) => {
+export const animateWatchOn = (watchOnRef) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ["data-footer"],

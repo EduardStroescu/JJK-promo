@@ -7,12 +7,10 @@ import {
   Router,
   RouterProvider,
 } from "@tanstack/react-router";
-import { Home } from "./pages";
+import { Characters, Home, Story } from "./pages";
 import { Layout } from "./components";
 import { StickyProvider } from "./components/StickyCursor/StickyContext";
 import { Scroll } from "./components/Scroll";
-import { Story } from "./pages/story/Story";
-import { Characters } from "./pages/characters/Characters";
 
 const rootRoute = new RootRoute({
   component: () => {
@@ -21,7 +19,6 @@ const rootRoute = new RootRoute({
         <Scroll>
           <Layout>
             <Outlet />
-            {/* <TanStackRouterDevtools position="bottom-right" /> */}
           </Layout>
         </Scroll>
       </StickyProvider>
@@ -32,6 +29,14 @@ const rootRoute = new RootRoute({
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
+  component: () => {
+    return <Home />;
+  },
+});
+
+const catchAllRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/$",
   component: () => {
     return <Home />;
   },
@@ -55,6 +60,7 @@ const charactersRoute = new Route({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  catchAllRoute,
   storyRoute,
   charactersRoute,
 ]);
@@ -62,7 +68,6 @@ const routeTree = rootRoute.addChildren([
 const router = new Router({
   routeTree,
   defaultPreload: "intent",
-  context: {},
 });
 
 const rootElement = document.getElementById("app");

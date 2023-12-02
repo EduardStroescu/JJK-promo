@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  // overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +10,6 @@
   left: 0;
 
   &__image {
-    // overflow: hidden;
     background-image: url("/hero3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -124,7 +122,6 @@
     display: none;
     position: fixed;
     inset: 0;
-    // pointer-events: none;
     opacity: 0;
   }
 
