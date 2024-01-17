@@ -42,7 +42,10 @@ export function VideoBackground({ videoRef }) {
 
   return (
     <video ref={videoRef} id="v0" preload="auto" muted>
-      <source type="video/mp4" src="/trailer.mp4" />
+      <source
+        type="video/mp4"
+        src="https://res.cloudinary.com/dkqbb07gx/video/upload/jjk/zihbdki13rjlcqpvpf7b.mp4"
+      />
     </video>
   );
 }
