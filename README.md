@@ -1,6 +1,10 @@
+<p align="center">
+  <a href="https://jjk-promo.vercel.app/" target="blank"><img src="https://raw.githubusercontent.com/EduardStroescu/PubImages/main/WebsiteImages/jjk.jpg" alt="JJK Promo Preview" /></a>
+</p>
+
 # JJK Promo
 
-# Introduction
+#@ Introduction
 
 This website is dedicated to celebrating the anime and manga series "Jujutsu Kaisen."
 My aim is to provide information and promote the series. I strive to respect the original creators and their work.
