@@ -11,7 +11,7 @@
   mask: url("/transition_sprite.webp");
   mask-size: 2300% 100%;
   animation: ani 0.7s steps(22) 0.3s both;
-  z-index: 9999999999;
+  z-index: 20;
   pointer-events: none;
 }
 @keyframes ani {
