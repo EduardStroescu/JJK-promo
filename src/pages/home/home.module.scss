@@ -25,7 +25,7 @@
     transform-origin: top center;
     display: flex;
     justify-content: center;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
 
   &__imageOverlay {

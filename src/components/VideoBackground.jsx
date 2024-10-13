@@ -7,11 +7,19 @@ export function VideoBackground({ videoRef }) {
 
   useEffect(() => {
     const playbackConst = 90;
+    const video = videoRef.current;
 
-    if (videoRef.current) {
-      const frameNumber = scroll.progress * playbackConst;
-      videoRef.current.currentTime = frameNumber;
+    if (!video) return;
+
+    video.pause();
+    function updateFrame() {
+      if (video.readyState >= 3) {
+        const frameNumber = scroll.progress * playbackConst;
+        video.currentTime = frameNumber;
+      }
     }
+
+    updateFrame();
   }, [scroll.progress]);
 
   useEffect(() => {
@@ -41,7 +49,15 @@ export function VideoBackground({ videoRef }) {
   }, []);
 
   return (
-    <video ref={videoRef} id="v0" preload="auto" muted>
+    <video
+      ref={videoRef}
+      id="v0"
+      preload="auto"
+      muted
+      playsInline
+      autoPlay
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    >
       <source
         type="video/mp4"
         src="https://res.cloudinary.com/dkqbb07gx/video/upload/jjk/zihbdki13rjlcqpvpf7b.mp4"

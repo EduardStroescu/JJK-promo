@@ -178,7 +178,7 @@ export const animateImage = () => {
   tl.from(
     "[data-image-overlay]",
     {
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+      "clip-path": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
       duration: 1,
     },
     ">"
@@ -186,7 +186,7 @@ export const animateImage = () => {
     .to(
       "[data-image-overlay]",
       {
-        "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        "clip-path": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         transformOrigin: "top bottom",
         duration: 1,
       },

@@ -53,8 +53,9 @@
         left: 0;
         right: 0;
         background-image: url("/character_bg.jpg");
-        mask: url("/transition_sprite.webp");
+        mask: url("/transition_sprite.png");
         background-size: cover;
+        background-repeat: no-repeat;
 
         &:hover {
           animation: ani 0.7s steps(22) 0.3s forwards;

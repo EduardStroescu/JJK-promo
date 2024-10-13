@@ -15,7 +15,7 @@ export const introAnimation = (wordGroupsRef) => {
   return tl;
 };
 
-export const animateTitle = () => {
+export const animateTitleIn = () => {
   const tl = gsap.timeline({
     defaults: {
       ease: "expo.inOut",
@@ -71,16 +71,12 @@ export const animateTitle = () => {
   return tl;
 };
 
-export const collapseWords = (wordGroupsRef) => {
+export const animateLoaderOut = (loaderRef) => {
   const tl = gsap.timeline();
-  tl.to(wordGroupsRef.current, {
-    scale: 200,
-    duration: 1,
-    ease: "expo.in",
-  }).to(
-    wordGroupsRef.current,
+  tl.to(
+    loaderRef.current,
     {
-      "clip-path": "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)",
+      "clip-path": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
       duration: 1,
       ease: "expo.inOut",
     },
@@ -121,8 +117,8 @@ export const progressAnimation = (progressRef, progressNumberRef) => {
       autoAlpha: 0,
     })
     .to(progressRef.current, {
-      autoAlpha: 0,
-      duration: 3,
+      y: "100%",
+      duration: 1,
     });
 
   return tl;

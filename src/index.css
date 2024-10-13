@@ -21,10 +21,12 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
   color: white;
+  background-color: black;
 }
 
 .navbar__wrapper {
   width: 100%;
+  max-height: max-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -40,8 +42,13 @@ body {
   pointer-events: none;
   background-image: url('/header_bg.webp');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: bottom;
+  overflow: hidden;
+  border: none;
+  outline: none;
 }
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -51,10 +58,10 @@ body {
   backdrop-filter: blur(16px);
   border-radius: 9999px;
   pointer-events: auto;
-  transform: translateY(-60%);
+  transform: translate3d(0, -60%, 0);
 }
 
-.navbar__pseudoElement{
+.navbar__pseudoElement {
   position: absolute;
   left: 0;
   top: 0;
@@ -138,7 +145,7 @@ body {
 .landscapePrompt {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   inset: 0;
   background-color: black;
   z-index: 999;
@@ -225,7 +232,7 @@ html.lenis {
 
   }
   .navbar {
-    transform: translateY(-90%);
+    transform: translate3d(0, -90%, 0);
   }
   .navbar__pseudoElement{
     display: block;

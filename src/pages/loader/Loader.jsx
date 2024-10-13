@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import {
+  animateTitleIn,
   introAnimation,
-  collapseWords,
+  animateLoaderOut,
   progressAnimation,
-  animateTitle,
 } from "./animations";
 import styles from "./loader.module.scss";
 
@@ -16,10 +16,10 @@ export function Loader({ timeline }) {
   useEffect(() => {
     timeline &&
       timeline
-        .add(animateTitle)
+        .add(animateTitleIn)
         .add(introAnimation(wordGroupsRef))
         .add(progressAnimation(progressRef, progressNumberRef), 0)
-        .add(collapseWords(loaderRef), "-=2");
+        .add(animateLoaderOut(loaderRef), ">");
   }, [timeline]);
 
   return (
